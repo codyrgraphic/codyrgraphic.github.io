@@ -1,0 +1,41 @@
+{
+  "name": "codyrphoto",
+  "version": "1.0.0",
+  "description": "A photography folio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js --exec 'open http://localhost:3000 && sleep 0.1 && reload -b'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codyrgraphic/codyrphoto.git"
+  },
+  "keywords": [
+    "photo",
+    "folio",
+    "codyrphoto"
+  ],
+  "author": "codyrgraphic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codyrgraphic/codyrphoto/issues"
+  },
+  "homepage": "https://github.com/codyrgraphic/codyrphoto#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "opn": "^6.0.0",
+    "reload-cli": "^0.0.3"
+  },
+  "nodemonConfig": {
+    "ext": "html",
+    "watch": [
+      "server.js",
+      "index.html"
+    ]
+  }
+}
