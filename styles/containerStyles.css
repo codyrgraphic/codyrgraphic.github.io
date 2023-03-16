@@ -1,5 +1,16 @@
 .container-page {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  padding-top: 100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  background-color: #101010;
+  /* display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #101010;
@@ -9,8 +20,13 @@
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    overscroll-behavior: none;
+    overscroll-behavior: none; */
   }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
 .container-nav {
     margin: 0 auto;
     display: flex;
