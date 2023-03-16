@@ -8,7 +8,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  /* -webkit-overflow-scrolling: touch; */
   background-color: #101010;
   /* display: flex;
     flex-direction: column;
@@ -52,7 +53,6 @@
   display: flex; 
   flex-direction: row; 
   padding-bottom: 120px;
-  width: 70vw;
   height:100vh;
   gap: 1vw;
   overflow: hidden;
@@ -93,6 +93,9 @@
   .container-image {
     border-radius: 8px;
   }
+  .image-carousel-v {
+    width: 70vw;
+  }
   .image-carousel-v-2 {
     border-radius: 8px;
   }
@@ -102,16 +105,19 @@
   .container-image {
     border-radius: 4px;
   }
+  .image-carousel-v {
+    width: 95vw;
+  }
   .image-carousel-v-2 {
     border-radius: 4px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 980px) {
   .container-image {
-    border-radius: 2px;
+    border-radius: 4px;
   }
   .image-carousel-v-2 {
-    border-radius: 2px;
+    border-radius: 4px;
   }
 }
