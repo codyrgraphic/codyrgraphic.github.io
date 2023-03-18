@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>Codyrphoto</title>
+    <link rel="stylesheet" href="styles/normalise.css" />
     <link rel="stylesheet" href="styles/containerStyles.css" />
     <link rel="stylesheet" href="styles/textStyles.css" />
   </head>
@@ -11,14 +12,15 @@
     <div class="container-header">
       <h1 class="title1">codyr</h1>
       <h1 class="title2">photo</h1>
+      <!-- <button style=
+      "position: absolute;
+      right: 40px; " id="context-menu-btn">Menu</button> -->
     </div>
-    <div class="container-nav">
-      <!-- <a href="travel.html" class="menuItems1">travel</a> -->
-    </div>
+
     <div class="image-carousel-v">
       <div class="image-carousel-v-2">
-        <img class="container-image" src="images/photo1.jpg" alt="">
         <img class="container-image" src="images/photo2.jpg" alt="">
+        <img class="container-image" src="images/photo1.jpg" alt="">
         <img class="container-image" src="images/photo3.jpg" alt="">
         <img class="container-image" src="images/photo4.jpg" alt="">
         <img class="container-image" src="images/photo5.jpg" alt="">
@@ -32,7 +34,7 @@
         <img class="container-image" src="images/photo13.jpg" alt="">
         <img class="container-image" src="images/photo14.jpg" alt="">
         <img class="container-image" src="images/photo15.jpg" alt="">
-        <img class="container-image" src="images/photo16.jpg" alt="">
+        <img class="container-image" src="images/photo16.jpg" alt="">`
         <img class="container-image" src="images/photo17.jpg" alt="">
         <img class="container-image" src="images/photo18.jpg" alt="">
       </div>
@@ -57,5 +59,32 @@
 
       </div>
     </div>
+
+    <ul class="context-menu">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+
+    <script>
+      const contextMenuBtn = document.getElementById("context-menu-btn");
+      const contextMenu = document.querySelector(".context-menu");
+  
+      contextMenuBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        contextMenu.style.display = "block";
+        contextMenu.style.left = event.clientX + "px";
+        contextMenu.style.top = event.clientY + "px";
+      });
+  
+      document.addEventListener("click", function(event) {
+        const isClickInside = contextMenu.contains(event.target) || contextMenuBtn.contains(event.target);
+  
+        if (!isClickInside) {
+          contextMenu.style.display = "none";
+        }
+      });
+    </script>
+
   </body>
   </html> 
