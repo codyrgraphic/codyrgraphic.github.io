@@ -35,7 +35,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 8vh;
   border-bottom: 5px solid #101010;
   top: 0;
   left: 0;
@@ -44,7 +44,7 @@
   z-index: 3;
   /* background-color: #101010; */
 }
-
+/* Semi-transparent header behind everything */
 .container-header-3 {
   display: flex;
   flex: auto;
@@ -116,15 +116,25 @@
 }
 
 .empty-div-1 {
-  min-height: 100px;
+  min-height: 8vh;
   width: 100%;
   background-color: #fff;
 }
 
 .empty-div-2 {
-  min-height: 100px;
+  min-height: 8vh;
   width: 100%;
   background-color: #fff;
+}
+
+.container-blur {
+  z-index: 0; 
+  flex: none; 
+  height: 7vh; 
+  width: 460px; 
+  position: absolute;
+  background: rgba(75, 75, 75, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 
@@ -159,10 +169,6 @@
     overflow: none;
   }
 
-  /* .empty-div-1 {
-    display: none;
-  }
-*/
   .empty-div-2 {
   display: none;
   }  
