@@ -2,95 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
     <title>Codyrphoto</title>
     <link rel="stylesheet" href="styles/normalise.css" />
     <link rel="stylesheet" href="styles/containerStyles.css" />
     <link rel="stylesheet" href="styles/textStyles.css" />
   </head>
   <body class="container-page">
-    <div class="container-header-2">
-      <div style= "
-      z-index: 3;
-      flex: none; 
-      order: 1; 
-      align-self: stretch;
-      flex-grow: 1; 
-      background-color: #101010; 
-      margin-right: -5px;">
+    <div class="container-header">
+      <div class="header-space-left"></div>
+
+      <div class="header-center">
+        <div class="header-space-top"></div>
+        <img
+          class="header-image"
+          src="images/codyrphoto-invert.svg"
+        />
+
+        <div class="header-space-bottom"></div>
       </div>
 
-      <div style="
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
-      flex: none;
-      order: 2;
-      align-self: stretch;
-      flex-grow: 0;
-      z-index: 2;
-      ">
-        <div style= "
-        display: flex;
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 1;
-        margin-bottom: -4px;
-        background-color: #101010;
-        ">
-        </div>
-        <img class="container-image-header" src= "images/codyrphoto-invert.svg">
+      <div class="header-space-right" ></div>
 
-        <div style= "
-        display: flex;
-        flex: none;
-        order: 2;
-        align-self: stretch;
-        flex-grow: 1;
-        margin-top: -4px;
-        background-color: #101010;">
-        </div>
+      <div class="header-effect">
+        <div class="container-blur"></div>
+        <div class="container-brightness"></div>
+        <div class="container-saturate"></div>
       </div>
-
-      <div style= "
-      z-index: 1;
-      flex: none; 
-      order: 3; 
-      align-self: stretch;
-      flex-grow: 1; 
-      background-color: #101010; 
-      margin-left: -15px;">
-      </div>
-
-      <div class="container-blur">
-      </div>
-      <!-- <h1 class="title1">codyr</h1>
-      <h1 class="title2">photo</h1> -->
-      <!-- <button style=
-      "position: absolute;
-      right: 40px; " id="context-menu-btn">Menu</button> -->
     </div>
 
     <div class="image-carousel-v">
       <div class="image-carousel-v-2">
         <div class="empty-div-1"></div>
-        <img class="container-image" src="images/photo8.jpg" alt="">
-        <img class="container-image" src="images/photo11.jpg" alt="">
-        <img class="container-image" src="images/photo5.jpg" alt="">
+        <img class="container-image" src="images/photo8.jpg" alt="" />
+        <img class="container-image" src="images/photo11.jpg" alt="" />
+        <img class="container-image" src="images/photo5.jpg" alt="" />
+        <img class="container-image" src="images/photo1.jpg" alt="" />
+        <img class="container-image" src="images/photo15.jpg" alt="" />
       </div>
       <div class="image-carousel-v-2">
         <div class="empty-div-2"></div>
-        <img class="container-image" src="images/photo18.jpg" alt="">
-        <img class="container-image" src="images/photo17.jpg" alt="">
-        <img class="container-image" src="images/photo16.jpg" alt="">
-        <img class="container-image" src="images/photo14.jpg" alt="">
-        <img class="container-image" src="images/photo13.jpg" alt="">
+        <img class="container-image" src="images/photo18.jpg" alt="" />
+        <img class="container-image" src="images/photo17.jpg" alt="" />
+        <img class="container-image" src="images/photo16.jpg" alt="" />
+        <img class="container-image" src="images/photo14.jpg" alt="" />
+        <img class="container-image" src="images/photo13.jpg" alt="" />
       </div>
     </div>
-    <div class="container-header-3"></div>
-
+    <div class="container-header-bg"></div>
 
     <ul class="context-menu">
       <li>Option 1</li>
@@ -101,22 +64,40 @@
     <script>
       const contextMenuBtn = document.getElementById("context-menu-btn");
       const contextMenu = document.querySelector(".context-menu");
-  
-      contextMenuBtn.addEventListener("click", function(event) {
+
+      contextMenuBtn.addEventListener("click", function (event) {
         event.preventDefault();
         contextMenu.style.display = "block";
         contextMenu.style.left = event.clientX + "px";
         contextMenu.style.top = event.clientY + "px";
       });
-  
-      document.addEventListener("click", function(event) {
-        const isClickInside = contextMenu.contains(event.target) || contextMenuBtn.contains(event.target);
-  
+
+      document.addEventListener("click", function (event) {
+        const isClickInside =
+          contextMenu.contains(event.target) ||
+          contextMenuBtn.contains(event.target);
+
         if (!isClickInside) {
           contextMenu.style.display = "none";
         }
       });
-    </script>
 
+      function redrawElement(element) {
+        const display = element.style.display;
+        element.style.display = "none";
+        void element.offsetWidth; // Trigger a reflow, flushing the CSS changes
+        element.style.display = display;
+      }
+
+      window.addEventListener("resize", () => {
+        const headerEffect = document.querySelector(".header-effect");
+        redrawElement(headerEffect);
+      });
+
+      window.addEventListener("resize", () => {
+        const headerEffect = document.querySelector(".container-header");
+        redrawElement(headerEffect);
+      });
+    </script>
   </body>
-  </html> 
+</html>
