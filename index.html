@@ -13,25 +13,37 @@
     <link rel="stylesheet" href="styles/textStyles.css" />
   </head>
   <body class="container-page">
+    <div id="dropdown-wrapper">
+      <div class="dropdown-menu">
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </div>
+    </div>
     <div class="container-header">
-      <div class="header-space-left"></div>
+      <div id="menu-button">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </div>
 
+
+      <div class="header-space-left"></div>
       <div class="header-center">
         <div class="header-space-top"></div>
-        <img
-          class="header-image"
-          src="images/codyrphoto-invert.svg"
-        />
+        <img class="header-image" src="images/codyrphoto-invert.svg" />
 
         <div class="header-space-bottom"></div>
       </div>
 
-      <div class="header-space-right" ></div>
+      <div class="header-space-right"></div>
 
       <div class="header-effect">
-        <div class="container-blur"></div>
-        <div class="container-brightness"></div>
-        <div class="container-saturate"></div>
+        <div class="header-blur"></div>
+        <div class="header-brightness"></div>
+        <div class="header-saturate"></div>
       </div>
     </div>
 
@@ -53,51 +65,8 @@
         <img class="container-image" src="images/photo13.jpg" alt="" />
       </div>
     </div>
-    <div class="container-header-bg"></div>
+    <div class="header-bg"></div>
 
-    <ul class="context-menu">
-      <li>Option 1</li>
-      <li>Option 2</li>
-      <li>Option 3</li>
-    </ul>
-
-    <script>
-      const contextMenuBtn = document.getElementById("context-menu-btn");
-      const contextMenu = document.querySelector(".context-menu");
-
-      contextMenuBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        contextMenu.style.display = "block";
-        contextMenu.style.left = event.clientX + "px";
-        contextMenu.style.top = event.clientY + "px";
-      });
-
-      document.addEventListener("click", function (event) {
-        const isClickInside =
-          contextMenu.contains(event.target) ||
-          contextMenuBtn.contains(event.target);
-
-        if (!isClickInside) {
-          contextMenu.style.display = "none";
-        }
-      });
-
-      function redrawElement(element) {
-        const display = element.style.display;
-        element.style.display = "none";
-        void element.offsetWidth; // Trigger a reflow, flushing the CSS changes
-        element.style.display = display;
-      }
-
-      window.addEventListener("resize", () => {
-        const headerEffect = document.querySelector(".header-effect");
-        redrawElement(headerEffect);
-      });
-
-      window.addEventListener("resize", () => {
-        const headerEffect = document.querySelector(".container-header");
-        redrawElement(headerEffect);
-      });
-    </script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
