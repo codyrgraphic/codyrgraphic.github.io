@@ -6,13 +6,43 @@
       http-equiv="Cache-Control"
       content="no-cache, no-store, must-revalidate"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.6" />
     <title>Codyrphoto</title>
     <link rel="stylesheet" href="styles/normalise.css" />
     <link rel="stylesheet" href="styles/containerStyles.css" />
     <link rel="stylesheet" href="styles/textStyles.css" />
   </head>
   <body class="container-page">
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "274598629331502");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v16.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="dropdown-wrapper">
       <div class="dropdown-menu">
         <ul>
@@ -47,6 +77,8 @@
       </div>
     </div>
 
+
+    
     <div class="image-carousel-v">
       <div class="image-carousel-v-2">
         <div class="empty-div-1"></div>
