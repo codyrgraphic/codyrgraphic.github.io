@@ -20,10 +20,42 @@
     dropdownWrapper.classList.toggle('open');
   });
 
-
-
+  document.getElementById('messenger-button').addEventListener('click', function() {
+    if (isMobileDevice()) {
+      isMessengerAppInstalled();
+    } else {
+      window.open('https://m.me/274598629331502', '_blank');
+    }
+  });
+  
   window.addEventListener("resize", () => {
     redrawElement(headerEffect1);
     redrawElement(headerEffect2);
   });
+
+  // Facbook messenger mobile checker
+  function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  };
+  
+  function isMessengerAppInstalled() {
+    if (typeof FB !== "undefined" && FB !== null) {
+      FB.getDeferredLoadState().then(function(result) {
+        if (result === 'READY') {
+          openMessengerInApp();
+        } else {
+          window.open('https://m.me/274598629331502', '_blank');
+        }
+      });
+    } else {
+      window.open('https://m.me/274598629331502', '_blank');
+    }
+  };
+  
+  function openMessengerInApp() {
+    window.location.href = 'fb-messenger://user-thread/274598629331502';
+  };
+
+
+
 })()
