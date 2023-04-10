@@ -373,7 +373,11 @@ body {
 @media screen and (max-width: 490px) {
   
   .container-page {
+    position: relative;
     overflow: auto;
+    height: auto!important;
+    min-height: 100vh!important;
+    overflow: hidden auto!important;
   }
 
   .container-header {
