@@ -262,6 +262,7 @@ body {
   gap: 16px;
   z-index: 1;
 }
+
 .image-carousel-v-2::-webkit-scrollbar {
   display: none;
 }
@@ -371,6 +372,10 @@ body {
 
 @media screen and (max-width: 490px) {
   
+  .container-page {
+    overflow: auto;
+  }
+
   .container-header {
     height: 80px;
   }
@@ -382,6 +387,18 @@ body {
     flex-grow: 0;
     height: auto;
     width: 70vw;
+  }
+
+  .container-image {
+    height: 100vh;
+  }
+
+  .image-carousel-v {
+    overflow: visible;
+  }
+
+  .image-carousel-v-2 {
+    overflow: visible;
   }
 
   .header-bg {
