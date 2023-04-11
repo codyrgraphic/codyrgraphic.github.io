@@ -20,13 +20,13 @@
     dropdownWrapper.classList.toggle('open');
   });
 
-  document.getElementById('messenger-button').addEventListener('click', function() {
-    if (isMobileDevice()) {
-      isMessengerAppInstalled();
-    } else {
-      window.open('https://m.me/274598629331502', '_blank');
-    }
-  });
+  // document.getElementById('messenger-button').addEventListener('click', function() {
+  //   if (isMobileDevice()) {
+  //     isMessengerAppInstalled();
+  //   } else {
+  //     window.open('https://m.me/274598629331502', '_blank');
+  //   }
+  // });
   
   window.addEventListener("resize", () => {
     redrawElement(headerEffect1);
