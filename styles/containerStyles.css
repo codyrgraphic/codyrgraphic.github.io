@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: center;
   height: 75px;
+
   top: 0;
   left: 0;
   right: 0;
@@ -372,13 +373,12 @@ body {
 }
 
 @media screen and (max-width: 490px) {
-  
   .container-page {
     position: relative;
     overflow: auto;
     height: fit-content;
-    min-height: 100vh!important;
-    overflow: hidden auto!important;
+    min-height: 100vh !important;
+    overflow: hidden auto !important;
   }
 
   .container-header {
@@ -393,7 +393,6 @@ body {
     height: auto;
     width: 70vw;
   }
-
 
   .image-carousel-v {
     overflow: visible;
@@ -417,6 +416,4 @@ body {
   .empty-div-1 {
     min-height: 78px;
   }
-
-
 }
